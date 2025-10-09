@@ -1,0 +1,181 @@
+\documentclass{article}
+
+% Language setting
+% Replace `english' with e.g. `spanish' to change the document language
+\usepackage[english]{babel}
+
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\title{Est-il possible de prédire une migration d'un salarié en fonction de variables mesurables ?}
+\author{Thomas Barat}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Le choix d'être mobile pour une offre d'emploi est bien souvent inconscient, mais il est bel et bien observable et dépend de multiples variables mesurables. Ces variables permettent de calculer un rapport coût/bénéfice qui détermine la migration d'un salarié.
+Elles proviennent de différentes origines : emploi futur, zone actuelle, zone de destination, caractéristiques individuelles, etc. Ainsi, en possédant toutes ces mesures, il est possible de rationaliser le choix de mobilité..
+\end{abstract}
+
+\section{Introduction}
+
+Le document suivant est une synthèse du papier de recherche sur la mobilité géographique des salariés et le salaire à l'entrée, écrit par Gilles Margirier en 2006.
+Dans le marché du travail actuel, la mobilité des salariés est un sujet important pour les futurs entrants. Bien que cela ne soit pas forcément une réflexion menée tout au long des études, c’est un choix complexe, multifactoriel et parfois déterminant pour le parcours professionnel comme personnel.
+Grâce à ce papier, nous voyons que les choix de mobilité pour un poste relèvent d’un raisonnement rationnel, reposant sur une balance coûts/bénéfices, même si cette réflexion n’est pas toujours consciente. Nous verrons donc les différents facteurs influençant cette balance et les modélisations possibles.
+
+\section{Etudes}
+
+\subsection{Problématique}
+
+La première étape du papier est de comprendre la problématique associée et d’identifier les variables impliquées dans le choix de mobilité.
+
+Le premier type de variables auquel on peut penser est lié à l’emploi proposé : salaire à l’embauche, localisation, temps de trajet, type de contrat, perspectives offertes, etc. Mais ces variables doivent être comparées au deuxième groupe : la situation/emploi actuel.
+Car, aussi avantageuses que puissent sembler les opportunités d’un nouvel emploi, si elles sont moins attractives que celles de l’emploi actuel, elles représentent un coût et penchent négativement dans la balance de la décision.
+
+Il est important de noter que toutes les variables ne se valent pas : une perte de salaire n’a pas le même poids qu’une perte d’entourage social ou une augmentation du temps de trajet. De plus, tous les individus n’ont pas les mêmes profils (opportunités, milieu social, âge, propension au risque, etc.). Par exemple, les femmes présentent généralement une aversion au risque plus forte que les hommes, ce qui peut influer sur leur mobilité.
+Ainsi, lors de la modélisation, il faut prendre en compte :
+
+\vspace{5pt}
+
+ - Gains / coûts monétaires
+
+ - Gains / coûts psychologiques
+
+ - Gains / coûts sociaux
+
+- Caractéristiques individuelles
+
+\vspace{5pt}
+
+C’est seulement en intégrant l’ensemble de ces dimensions que le modèle pourra être pertinent.
+
+\newpage
+
+\subsection{Modélisation}
+
+Une fois les variables identifiées, les chercheurs se sont penchés sur les modèles.
+La première équation présentée est celle de la décision de migrer ou non 
+
+\vspace{5pt}
+
+\textcolor{white}{123456789123456}  $B_i = \sum_{t=1}^{n} \frac{(W_{imt} - W_{int})}{(1 + r)^t} - \frac{C_{it}}{(1 + r)^t}$   \textcolor{white}{123456}   (1)
+
+\vspace{5pt}
+
+Elle représente la différence entre les bénéfices liés à la migration et ceux liés à l’immobilité, diminuée des coûts de migration, le tout actualisé dans le temps. Si le résultat est positif, l’individu migre, sinon il reste.\\
+Cette équation est ensuite reformulée (Équation 2), où :
+
+\vspace{5pt}
+
+\textcolor{white}{123456789123456} $B_i = \alpha_0 + \alpha_1(w_{im} + w_{im}) + \alpha'_2Z_i + \alpha'_3X_i + \varepsilon_i $ \textcolor{white}{123456}   (2)
+
+\vspace{5pt}
+
+ - X$_i$ désigne le vecteur des caractéristiques personnelles,
+
+ - Z$_i$ celui des variables liées à la carrière,
+
+ - et w$_i$$_,$$_j$ le logarithme du salaire W$_i$$_,$$_j$.
+
+\vspace{5pt}
+ 
+Le salaire w$_i$$_,$$_j$ est estimé à travers les équations 3a et 3b, qui intègrent les caractéristiques personnelles (X$_i$) et celles de l’emploi occupé (N$_i$).
+
+\vspace{5pt}
+
+\textcolor{white}{123456789123456} $w_{im} = \beta_{0m} + \beta_{1m}'X_i + \beta'_{2m}N_i + u_{im} $ \textcolor{white}{1234}   (3a)
+
+\textcolor{white}{123456789123456} $w_{in} = \beta_{0n} + \beta_{1n}'X_i + \beta'_{2n}N_i + u_{in} $ \textcolor{white}{123456}   (3b)
+
+\vspace{5pt}
+
+Problème : on n’observe empiriquement que certaines valeurs conditionnées par le statut de migrant ou non, ce qui empêche l’estimation directe. Pour contourner cela, les chercheurs substituent et reformulent le modèle :
+
+\vspace{5pt}
+
+\textcolor{white}{123456789123456} $w_{in} = \delta_{0n} + \delta_{1}'X + \delta'_{2}Z + \delta'_{3}N + v $ \textcolor{white}{123456}   (4)
+
+\vspace{5pt}
+
+Cette équation est estimée par la méthode du maximum de vraisemblance, via un Probit :
+
+On suppose M = 1 si $B > 0$ (migration),
+
+et M = 0 si $B\leq 0$ (non-migration).\\
+Enfin, les équations de gains corrigent le biais de sélection par la méthode de Heckman, permettant d’obtenir des estimations cohérentes.
+
+\subsection{Panel}
+
+L’échantillon initial comptait 55 000 observations, réduit à 45 519 en ne conservant que les individus en emploi au moment de l’enquête et résidant en France métropolitaine. Pour éviter les biais dus aux spécificités du secteur public, seuls les emplois du secteur privé à temps plein ont été retenus, ramenant l’échantillon à environ 26 000 individus (25 243 exactement).\\
+Un atout majeur de l’étude est le découpage territorial fin, avec 348 zones d’emploi en France métropolitaine, bien plus pertinentes que les simples zones administratives. Ainsi, on observe par exemple que, sur 26,8 \% de migrants, 15,1 \% changent de région tandis que 11,7 \% changent de zone d’emploi sans quitter leur région.
+
+\vspace{5pt}
+
+ - L’analyse statistique met en avant certains facteurs :
+
+ - Le critère prédominant est le salaire.
+
+ - Les individus moins qualifiés migrent moins que ceux plus qualifiés.
+
+ - La zone géographique d’origine et le fait d’avoir des responsabilités influencent à la fois la \textcolor{white}{123} \textcolor{white}{1234} probabilité de migrer et le salaire.
+
+ \vspace{5pt}
+ 
+Concernant les rémunérations, le salaire moyen est de 1097 € (soit environ 100 € au-dessus du SMIC de l’époque). Mais surtout, les migrants perçoivent un salaire 18,7 \% plus élevé que les non-migrants, ce qui confirme l’importance du facteur salarial dans la décision de mobilité.
+
+\newpage
+
+\subsection{Résultats}
+
+Comme indiqué dans la section de modélisation, les auteurs estiment d’abord l’équation de sélection grâce à un Probit, en régressant la mobilité (migrant/non-migrant) sur un ensemble de variables. Dans un second temps, ils estiment séparément les équations de gains pour les deux groupes (équations 3a et 3b). Les salaires prédits w$_m$ et w$_n$ combinés aux autres variables, permettent ensuite d’estimer l’équation structurelle (équation 2).\\
+Les estimations mettent en évidence la présence d’un effet de sélection :
+Les migrants présentent des caractéristiques inobservables (motivation, ouverture au risque, ambition, etc.) qui se traduisent par des salaires supérieurs à ceux de profils comparables restés immobiles.\\
+Les non-migrants bénéficient eux aussi d’un léger effet de sélection positif, lié à d’autres facteurs.\\
+Ces résultats soulignent que la migration ne se réduit pas à un simple arbitrage économique : elle reflète aussi des différences structurelles et comportementales entre les individus.
+
+\section{Conclusion}
+
+En définitive, l’étude montre que la décision de mobilité géographique des jeunes entrants sur le marché du travail n’est pas aléatoire, mais qu’elle répond à une logique rationnelle de comparaison coûts/bénéfices.\\
+Les variables individuelles (sexe, âge, niveau d’études, situation familiale, origine sociale), les caractéristiques de l’emploi (salaire, responsabilités, taille de l’entreprise) et celles des zones d’origine et de destination (revenu moyen, dynamisme économique, chômage, attractivité) s’imbriquent pour expliquer les comportements de migration.\\
+Les résultats économétriques confirment que le salaire reste le déterminant principal, tant pour inciter à migrer que pour récompenser ceux qui l’ont fait. L’effet de sélection positif montre que les migrants perçoivent en moyenne une rémunération supérieure de près de 19 \% à celle des non-migrants. Néanmoins, d’autres facteurs comme le capital humain, la situation du marché local ou encore les contraintes familiales jouent aussi un rôle important.\\
+Ainsi, la mobilité géographique apparaît comme un investissement stratégique pour les jeunes actifs : elle implique des coûts parfois élevés, mais constitue souvent un moyen efficace d’accéder à de meilleures opportunités professionnelles et salariales.
+
+\section{Annexe}
+
+\begin{center}
+  \setlength{\fboxsep}{0.1cm} 
+  \setlength{\fboxrule}{1pt}
+  \fcolorbox{col}{white}{
+    \includegraphics[width=0.9\linewidth]{Images/Statistiques déscriptives.png}}\\
+    \vspace{0.1cm}
+    \caption{Statistiques déscriptives}
+\end{center}
+
+\vspace{0.25cm}
+\begin{center}
+  \setlength{\fboxsep}{0.1cm} 
+  \setlength{\fboxrule}{1pt}
+  \fcolorbox{col}{white}{
+    \includegraphics[width=0.9\linewidth]{Images/Décision de migration (Probit).png}}\\
+    \vspace{0.1cm}
+    \caption{Décision de migration (Probit)}
+\end{center}
+
+\vspace{0.25cm}
+\begin{center}
+  \setlength{\fboxsep}{0.1cm} 
+  \setlength{\fboxrule}{1pt}
+  \fcolorbox{col}{white}{
+    \includegraphics[width=0.9\linewidth]{Images/Equation de gain.png}}\\
+    \vspace{0.1cm}
+    \caption{Equation de gain}
+\end{center}
+
+\end{document}
