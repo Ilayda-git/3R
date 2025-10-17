@@ -1,0 +1,163 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{hyperref}
+\geometry{margin=2.5cm}
+\setstretch{1.25}
+
+\title{Revue de Synthèse : Mobilité, salaires et trajectoires professionnelles en France}
+\author{Thomas Barat, Chloé \& Ilayda}
+\date{Octobre 2025}
+
+\begin{document}
+\maketitle
+
+\section*{Introduction}
+
+L’analyse des trajectoires professionnelles, de la mobilité et des rémunérations constitue un champ majeur de la recherche économique sur le marché du travail. 
+Depuis les années 1980, les économistes s’interrogent sur la stabilité des carrières, les effets de la mobilité sur les salaires, et les sources des inégalités entre individus et entreprises.  
+Les trois travaux étudiés ici  Kramarz (2003), Simonnet (1996) et Margirier (2006) — s’inscrivent dans cette perspective, en combinant approches microéconomiques, économétriques et institutionnelles.
+
+Ces contributions s’articulent autour d’un même questionnement : \textit{dans quelle mesure la mobilité, qu’elle soit professionnelle ou géographique, constitue-t-elle un levier de progression salariale ou un facteur de segmentation du marché du travail ?}  
+Pour y répondre, les auteurs mobilisent différentes bases de données (DADS, Enquête Emploi de l’INSEE), diverses méthodologies (modèles de panel, équations de gains, modèles de sélection, Probit), et des cadres théoriques complémentaires : le capital humain, la théorie de l’appariement et la théorie de la recherche d’emploi.
+
+\section{Cadres théoriques : capital humain, appariement et arbitrage de migration}
+
+L’étude de la mobilité salariale repose d’abord sur la \textbf{théorie du capital humain} (Becker, 1975), selon laquelle l’éducation et l’expérience constituent des investissements productifs.  
+La fonction de gains individuelle peut être représentée sous la forme canonique de Mincer :
+
+\begin{equation}
+\ln E_{it} = \ln E_{i0} + r_s S_i + r_e Ex_i + u_{it}
+\end{equation}
+
+où :
+\begin{itemize}
+    \item $E_{it}$ est le salaire potentiel de l’individu $i$ à la période $t$ ;
+    \item $S_i$ le nombre d’années d’études ;
+    \item $Ex_i$ l’expérience professionnelle ;
+    \item $r_s$ et $r_e$ les rendements de l’éducation et de l’expérience.
+\end{itemize}
+
+Kramarz (2003) et Simonnet (1996) enrichissent ce cadre en ajoutant l’ancienneté ($Anc_i$), qui capte la valorisation du \textbf{capital humain spécifique} au sein de l’entreprise :
+
+\begin{equation}
+\ln E_{it} = \ln E_{i0} + r_s S_i + r_e Ex_i + r_a Anc_i + u_{it}
+\end{equation}
+
+Le coefficient $r_a$ mesure le rendement interne de la stabilité et de la fidélité à l’entreprise, opposé au rendement externe de la mobilité.
+
+La \textbf{théorie de l’appariement} complète cette approche en considérant que le salaire résulte de la qualité du « match » entre travailleur et entreprise.  
+Une mobilité interne, externe ou sectorielle correspond alors à un réajustement de cet appariement.  
+Simonnet (1996) distingue trois types de mobilité :
+\begin{enumerate}
+    \item la \textbf{mobilité interne}, ou réaffectation dans la même entreprise, valorisant le capital humain spécifique ;
+    \item la \textbf{mobilité externe}, changement d’entreprise pour trouver un meilleur appariement ;
+    \item la \textbf{mobilité sectorielle}, changement d’entreprise et de secteur, impliquant un redéploiement du capital humain général.
+\end{enumerate}
+
+Enfin, Margirier (2006) étend cette logique à la mobilité géographique : la migration est envisagée comme un arbitrage coûts-bénéfices entre deux situations possibles rester ou partirm fondé sur les salaires anticipés et les coûts associés.  
+La valeur nette actualisée du bénéfice de migration est :
+
+\begin{equation}
+B_i = \sum_{t=1}^{n} \frac{(W_{imt} - W_{int})}{(1 + r)^t} - \frac{C_{it}}{(1 + r)^t}
+\end{equation}
+
+L’individu choisit de migrer si $B_i > 0$. Ce cadre introduit explicitement le raisonnement intertemporel et la rationalité économique du comportement de mobilité.
+
+\section{Les données et leur exploitation économétrique}
+
+Les trois études reposent sur des bases de données administratives et d’enquêtes représentatives :
+\begin{itemize}
+    \item Les \textbf{DADS} (Kramarz, 2003) permettent un suivi longitudinal des salariés français depuis la fin des années 1960, en reliant salaires, entreprises et catégories professionnelles.
+    \item L’\textbf{Enquête Emploi de l’INSEE} (Simonnet, 1996 ; Margirier, 2006) offre des informations détaillées sur l’expérience, le secteur, la situation géographique et les transitions d’emploi.
+\end{itemize}
+
+Kramarz utilise des modèles de panel à effets fixes individuels pour neutraliser l’hétérogénéité inobservée, tandis que Simonnet emploie des régressions de type Mincer estimées séparément pour les hommes et pour les femmes.  
+Margirier, de son côté, adopte une approche structurelle en deux étapes :  
+(1) estimation d’un modèle de sélection par Probit, puis  
+(2) correction du biais de sélection dans les équations de salaire via la méthode de Heckman (1979).
+
+\subsection*{Modèle structurel de Margirier (2006)}
+
+Le modèle empirique de Margirier prend la forme :
+
+\begin{equation}
+B_i = \alpha_0 + \alpha_1 (w_{im} + w_{in}) + \alpha'_2 Z_i + \alpha'_3 X_i + \varepsilon_i
+\end{equation}
+
+où $Z_i$ désigne les caractéristiques de carrière (ancienneté, responsabilités), et $X_i$ les caractéristiques personnelles (âge, sexe, éducation, situation familiale).  
+Les salaires anticipés $w_{im}$ et $w_{in}$ sont estimés par :
+
+\begin{align}
+w_{im} &= \beta_{0m} + \beta'_1 X_i + \beta'_2 N_i + u_{im} \\
+w_{in} &= \beta_{0n} + \beta'_1 X_i + \beta'_2 N_i + u_{in}
+\end{align}
+
+Comme seules les observations conditionnées par $M_i$ (migrant ou non) sont visibles, la méthode de Heckman corrige le biais de sélection par la fonction de Mills inversée :
+
+\begin{align}
+w_{im} &= \delta_{0m} + \delta'_1 X_i + \delta'_2 Z_i + \lambda_m \hat{\rho}_m + v_{im} \\
+w_{in} &= \delta_{0n} + \delta'_1 X_i + \delta'_2 Z_i + \lambda_n \hat{\rho}_n + v_{in}
+\end{align}
+
+Cette spécification permet d’obtenir des estimations cohérentes des rendements salariaux liés à la migration.
+
+\section{Résultats empiriques et interprétations économiques}
+
+\subsection{Kramarz (2003) : stabilité et hétérogénéité des trajectoires}
+
+Les travaux de Kramarz montrent une relative stabilité des trajectoires professionnelles en France, malgré la montée du chômage et la transformation des structures productives.  
+La dispersion salariale provient davantage de différences persistantes entre individus que de variations intra-individuelles.  
+L’introduction de l’identifiant employeur dans les DADS révèle que les entreprises jouent un rôle structurant dans les inégalités salariales : la mobilité inter-firmes contribue significativement à la progression des revenus.
+
+\subsection{Simonnet (1996) : mobilité et différenciation de genre}
+
+L’étude de Simonnet (1996) montre que la mobilité professionnelle n’a pas les mêmes effets sur le salaire selon le sexe.  
+Chez les hommes, la \textbf{mobilité interne} apporte un gain salarial moyen de \textbf{+5 à +8\%}. Ce résultat s’explique par la valorisation de l’ancienneté et les promotions internes.  
+
+Pour les femmes, la \textbf{mobilité externe} est plus avantageuse, avec une hausse moyenne du salaire de \textbf{+7 à +9\%}. En revanche, la mobilité interne a peu d’effet sur leur rémunération. Les \textbf{trajectoires mixtes} (mobilité interne puis externe) donnent les meilleurs résultats, avec des rendements proches de \textbf{+9 à +12\%}.  
+
+Les personnes qui déclarent préférer une carrière stable gagnent environ \textbf{9\% de moins} que les autres, ce qui montre qu’une faible mobilité peut freiner les opportunités salariales. Les passages entre secteurs confirment cette logique : le \textbf{public vers le privé} entraîne une \textbf{hausse de salaire de +6 à +8\%}, tandis que le \textbf{privé vers le public} provoque une \textbf{baisse de --4 à --8\%}.  
+
+Ces effets sont plus marqués chez les hommes, dont la mobilité est mieux valorisée sur le marché du travail. Pour les femmes, les gains restent limités, ce qui reflète des inégalités persistantes dans la reconnaissance de leurs parcours professionnels.
+
+
+\subsection{Margirier (2006) : migration et sélection positive}
+
+Margirier (2006) met en évidence qu’environ 27\% des individus de l’échantillon ont migré, dont 15\% ont changé de région.  
+Les migrants perçoivent en moyenne un salaire supérieur de 18,7\% à celui des non-migrants, illustrant un effet de sélection positive : ceux qui migrent sont les plus qualifiés, jeunes et ambitieux.  
+La probabilité de migrer croît avec le salaire anticipé, le niveau d’éducation et la jeunesse, et décroît avec les contraintes familiales.  
+Le salaire joue un double rôle : cause et conséquence de la mobilité.
+
+\section{Discussion : articulation entre mobilité, salaires et inégalités}
+
+L’analyse conjointe de ces trois travaux permet de dégager plusieurs enseignements économiques :
+
+\begin{itemize}
+    \item La mobilité, qu’elle soit professionnelle ou géographique, agit comme un \textbf{investissement} : elle engendre un coût initial mais offre des rendements différenciés selon les profils.
+    \item Les \textbf{rendements de la mobilité} dépendent fortement des structures du marché du travail : segmentation, réseaux, discriminations.
+    \item Les \textbf{modèles économétriques}  effets fixes, Probit, Heckman  montrent l’importance de corriger les biais de sélection pour isoler les effets salariaux réels.
+    \item La \textbf{mobilité n’est pas un correcteur automatique des inégalités} : elle peut au contraire les renforcer, favorisant les individus les mieux dotés en capital humain.
+\end{itemize}
+
+Les résultats de Simonnet (1996) sur la dimension genrée, et ceux de Margirier (2006) sur la sélection positive, rejoignent les conclusions structurelles de Kramarz (2003) : la mobilité reflète autant qu’elle produit la hiérarchie salariale.
+
+\section*{Conclusion}
+
+Ces trois études offrent une vision intégrée des mécanismes de mobilité sur le marché du travail français.  
+Elles montrent que la mobilité professionnelle et géographique s’inscrit dans une logique d’optimisation individuelle, mais aussi dans des structures économiques qui conditionnent ses rendements.  
+
+Sur le plan économétrique, elles illustrent la diversité des outils utilisés : modèles de panel, équations de gains, modèles Probit, correction de Heckman.  
+Sur le plan économique, elles rappellent que la mobilité traduit la recherche d’un meilleur appariement, mais révèle aussi les limites d’un marché du travail imparfait.
+
+\vspace{1em}
+\noindent\textbf{Références} \\
+Kramarz, F. (2003). \textit{Les origines et le développement des recherches sur les trajectoires professionnelles et les rémunérations salariales.} \\
+Simonnet, V. (1996). \textit{Mobilité professionnelle et salaire : différences entre hommes et femmes.} \\
+Margirier, G. (2006). \textit{Mobilité géographique et salaires à l’entrée sur le marché du travail.}
+
+\end{document}
