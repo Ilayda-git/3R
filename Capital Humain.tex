@@ -1,0 +1,101 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{hyperref}
+\geometry{margin=2.5cm}
+\setstretch{1.25}
+
+\title{Revue de Synthèse : Mobilité, salaires et trajectoires professionnelles}
+\author{Thomas, Chloé \& Ilayda}
+\date{Octobre 2025}
+
+\begin{document}
+\maketitle
+
+
+\section{Les approches de Glaude (1986) et Simonnet (1996) : capital humain, ancienneté et mobilité}
+
+Les travaux de \textbf{Glaude (1986)} et de \textbf{Simonnet (1996)} s’inscrivent dans la continuité de la théorie du capital humain développée par Becker (1975) et Mincer (1974).  
+Tous deux cherchent à expliquer la formation des salaires à partir des caractéristiques individuelles des travailleurs, notamment la formation, l’expérience et l’ancienneté.  
+Là où Glaude met en évidence la rentabilité de la stabilité et du capital humain spécifique, Simonnet prolonge cette réflexion en y intégrant la mobilité professionnelle et les différences entre hommes et femmes.
+
+\subsection{Le modèle de Glaude (1986)}
+
+Dans son article \textit{L’ancienneté et l’expérience professionnelle dans la formation du salaire}, Glaude propose une estimation économétrique visant à distinguer les effets de l’expérience professionnelle totale, qui reflète le \textbf{capital humain général}, et ceux de l’ancienneté dans l’entreprise, qui mesurent le \textbf{capital humain spécifique}.  
+Son modèle de base, inspiré de la fonction de gains de Mincer, prend la forme suivante :
+
+\begin{equation}
+\ln W_i = \alpha + \beta_1 \text{Exp}_i + \beta_2 \text{Exp}_i^2 + \gamma_1 \text{Anc}_i + \gamma_2 \text{Anc}_i^2 + \delta' X_i + \varepsilon_i
+\end{equation}
+
+où :
+\begin{itemize}
+    \item $W_i$ est le salaire horaire de l’individu $i$ ;
+    \item $\text{Exp}_i$ représente l’expérience professionnelle totale (capital humain général) ;
+    \item $\text{Anc}_i$ désigne l’ancienneté dans l’entreprise (capital humain spécifique) ;
+    \item $X_i$ regroupe les variables de contrôle : diplôme, catégorie professionnelle, secteur, taille d’entreprise et région ;
+    \item les termes au carré ($\text{Exp}_i^2$ et $\text{Anc}_i^2$) traduisent la décroissance des rendements avec la durée de carrière.
+\end{itemize}
+
+\ 
+
+Les résultats indiquent que l’expérience et l’ancienneté ont toutes deux un effet positif et significatif sur les salaires, mais de manière différenciée.  
+Le rendement de l’expérience est estimé à environ \textbf{1,5 à 2\% par an}, tandis que celui de l’ancienneté se situe autour de \textbf{1\%}.  
+Les coefficients quadratiques sont négatifs, ce qui confirme la présence de rendements décroissants à mesure que la durée dans l’emploi augmente.  
+
+Glaude montre également que ces rendements varient selon les secteurs d’activité : ils sont plus élevés dans les \textbf{secteurs fermés ou hiérarchisés} (banques, administration) que dans les secteurs concurrentiels (industrie, BTP).  
+Cependant, il met en garde contre une possible \textit{surestimation} du rendement de l’ancienneté : une longue présence dans une entreprise peut refléter un apprentissage productif, mais aussi une bonne adéquation entre le salarié et son emploi.  
+Cette observation ouvre la voie aux travaux ultérieurs de Simonnet.
+
+\subsection{Le prolongement de Simonnet (1996)}
+
+Dix ans plus tard, \textbf{Simonnet (1996)} reprend cette distinction entre expérience générale et capital humain spécifique, mais elle y ajoute une dimension absente chez Glaude : celle du \textbf{déroulement de carrière} et de la \textbf{mobilité professionnelle}.  
+Elle part du même cadre de Mincer, en y intégrant explicitement les mouvements de mobilité interne et externe.  
+Son modèle théorique s’écrit ainsi :
+
+\begin{equation}
+\ln E_{it} = \ln E_{i0} + r_s S_i + r_e Ex_i + r_a Anc_i + \eta M_i + u_{it}
+\end{equation}
+
+où :
+\begin{itemize}
+    \item $S_i$ désigne le nombre d’années d’études de l’individu $i$ ;
+    \item $Ex_i$ et $Anc_i$ représentent respectivement l’expérience totale et l’ancienneté ;
+    \item $M_i$ correspond au profil de mobilité (interne, externe, mixte ou public/privé).
+\end{itemize}
+
+\
+
+Simonnet montre que si l’on ne prend pas en compte la mobilité, on risque de mal interpréter le rôle de l’ancienneté.
+Un salarié qui reste longtemps dans la même entreprise peut être mieux payé, non seulement parce qu’il a accumulé de l’expérience spécifique, mais aussi parce qu’il occupe un poste bien adapté à ses compétences. Ses résultats confirment cette idée.
+
+\ 
+
+Chez les \textbf{hommes}, l’effet de l’ancienneté diminue fortement dès qu’on ajoute les variables de mobilité : la hausse des salaires provient surtout de la \textbf{mobilité interne}, liée aux promotions ou à la progression hiérarchique.
+Chez les \textbf{femmes}, c’est plutôt la \textbf{mobilité externe}, le changement d’entreprise qui permet d’obtenir les meilleurs gains salariaux.
+Enfin, passer du \textbf{secteur public vers le privé} est en général plus avantageux que l’inverse.
+
+\subsection{Une continuité analytique entre Glaude et Simonnet}
+
+Les travaux de Glaude et de Simonnet sont liés : tous deux étudient comment l’expérience et la stabilité influencent les salaires.
+Simonnet reprend le modèle de Glaude, mais elle l’enrichit en ajoutant la mobilité professionnelle et la différence entre hommes et femmes.
+Les deux montrent que les salaires augmentent avec l’expérience et l’ancienneté, mais que ces effets dépendent du parcours de chaque individu.
+Leurs résultats diffèrent sur le rôle de l’ancienneté.
+Pour Glaude, elle reflète surtout la valeur de la stabilité dans l’entreprise.
+Pour Simonnet, cet effet devient plus faible quand on prend en compte la mobilité : les salariés les mieux payés sont souvent ceux qui ont trouvé un emploi bien adapté à leurs compétences et qui y restent plus longtemps. 
+
+\subsection{Conclusion}
+ 
+Glaude montre que rester longtemps dans la même entreprise peut être un bon investissement : la stabilité et la fidélité sont récompensées.
+Simonnet, elle, apporte une vision plus dynamique. Elle explique que la mobilité joue aussi un rôle important pour comprendre les différences de salaires entre hommes et femmes.
+Ainsi, Simonnet ne contredit pas Glaude, mais elle complète son analyse.
+Elle montre que la stabilité n’est pas toujours rentable : tout dépend du type de mobilité, du secteur et du genre.
+L’ancienneté reste importante, mais son effet sur le salaire doit être étudié en tenant compte du parcours professionnel et des possibilités de changement d’emploi.
+
+
+
+\end{document}
