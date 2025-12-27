@@ -1,4 +1,4 @@
-# Mobilité professionnelle et salaires – Analyse économétrique
+# Mobilité professionnelle et salaires : Analyse économétrique
 
 **Auteurs** : Chloé Martin · Ilayda Yilmaz · Thomas Barat  
 
