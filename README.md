@@ -13,7 +13,7 @@ L’enjeu est d’identifier dans quelle mesure la mobilité constitue un **inve
 
 ## Données
 
-- **Source** : Enquête Emploi – Insee  
+- **Source** : Enquête Emploi Insee  
 - **Taille initiale** : 90 088 individus · 689 variables  
 - **Échantillon final** : ~29 000 individus · 16 variables sélectionnées  
 - **Types de données** : numériques et catégorielles  
@@ -30,7 +30,7 @@ Un travail approfondi de **nettoyage des données** a été réalisé, notamment
 ## Cadre théorique
 
 Le projet s’appuie sur :
-- la **théorie du capital humain** (Becker, 1975 ; Mincer, 1974),
+- la **théorie du capital humain** (Becker 1975 ; Mincer 1974),
 - les travaux de **Simonnet (1996)** sur la mobilité professionnelle et les différences de genre,
 - les apports de **Margirier (2006)** sur la mobilité géographique et le biais de sélection.
 
